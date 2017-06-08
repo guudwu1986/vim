@@ -1,27 +1,3 @@
-===============================================================================
-=    W e l c o m e   t o   t h e   V I M   T u t o r    -    Version 1.7      =
-===============================================================================
-
-     Vim is a very powerful editor that has many commands, too many to
-     explain in a tutor such as this.  This tutor is designed to describe
-     enough of the commands that you will be able to easily use Vim as
-     an all-purpose editor.
-
-     The approximate time required to complete the tutor is 25-30 minutes,
-     depending upon how much time is spent with experimentation.
-
-     ATTENTION:
-     The commands in the lessons will modify the text.  Make a copy of this
-     file to practise on (if you started "vimtutor" this is already a copy).
-
-     It is important to remember that this tutor is set up to teach by
-     use.  That means that you need to execute the commands to learn them
-     properly.  If you only read the text, you will forget the commands!
-
-     Now, make sure that your Shift-Lock key is NOT depressed and press
-     the   j   key enough times to move the cursor so that Lesson 1.1
-     completely fills the screen.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Lesson 1.1:  MOVING THE CURSOR
 
 
@@ -126,7 +102,7 @@ NOTE: As you go through this tutor, do not try to memorize, learn by usage.
 
   3. As the text has been appended press <ESC> to return to Normal mode.
 
-  4. Move the cursor to the second line marked ---> and repeat 
+  4. Move the cursor to the second line marked ---> and repeat
      steps 2 and 3 to correct this sentence.
 
 ---> There is some text missing from th
@@ -158,7 +134,7 @@ NOTE: As you go through this tutor, do not try to memorize, learn by usage.
      the following summary.
 
   6. After reading the above steps and understanding them: do it.
-  
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			       Lesson 1 SUMMARY
 
@@ -741,7 +717,7 @@ NOTE:  You can also read the output of an external command.  For example,
 	     ** Type  a  to insert text AFTER the cursor. **
 
   1. Move the cursor to the start of the line below marked --->.
-  
+
   2. Press  e  until the cursor is on the end of  li .
 
   3. Type an  a  (lowercase) to append text AFTER the cursor.
@@ -750,7 +726,7 @@ NOTE:  You can also read the output of an external command.  For example,
      mode.
 
   5. Use  e  to move to the next incomplete word and repeat steps 3 and 4.
-  
+
 ---> This li will allow you to pract appendi text to a line.
 ---> This line will allow you to practice appending text to a line.
 
@@ -787,9 +763,9 @@ NOTE:  Replace mode is like Insert mode, but every typed character deletes an
 	  ** Use the  y  operator to copy text and  p  to paste it **
 
   1. Go to the line marked with ---> below and place the cursor after "a)".
-  
+
   2. Start Visual mode with  v  and move the cursor to just before "first".
-  
+
   3. Type  y  to yank (copy) the highlighted text.
 
   4. Move the cursor to the end of the next line:  j$
@@ -823,7 +799,7 @@ NOTE:  Replace mode is like Insert mode, but every typed character deletes an
 
   6. To disable ignoring case enter:  :set noic
 
-NOTE:  To remove the highlighting of matches enter:   :nohlsearch 
+NOTE:  To remove the highlighting of matches enter:   :nohlsearch
 NOTE:  If you want to ignore case for just one search command, use  \c
        in the phrase:  /ignore\c  <ENTER>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
