@@ -1,0 +1,12 @@
+!_TAG_FILE_SORTED	1	Case
+'helpfile'	guusummary	/\\tag|'helpfile'|tag\\/
+'helpheight'	guusummary	/\\tag|'helpheight'|tag\\/
+'helplang'	guusummary	/\\tag|'helplang'|tag\\/
+:exusage	guusummary	/\\tag|:exusage|tag\\/
+:help	guusummary	/\\tag|:help|tag\\/
+:helpclose	guusummary	/\\tag|:helpclose|tag\\/
+:helpfind	guusummary	/\\tag|:helpfind|tag\\/
+:helpgrep	guusummary	/\\tag|:helpgrep|tag\\/
+:helptags	guusummary	/\\tag|:helptags|tag\\/
+:lhelpgrep	guusummary	/\\tag|:lhelpgrep|tag\\/
+:viusage	guusummary	/\\tag|:viusage|tag\\/

@@ -1,0 +1,28 @@
+Help:
+  \c|:help\a|[|a\!\a|] [Subject][|a\@\a|Language]|a\|c\: \tag|:help|tag\
+    Display \a|Subject|a\(Default \o|helpfile|o\) in Help-Window.
+    Wildcard available in \a|Subject|a\.
+    \a|Language|a\ is a two-letter code.
+    \i|!|i\ prefers a non-English help-file.
+    \o|helpfile|o\: \tag|'helpfile'|tag\
+      Main help filename.
+    \o|helplang|o\: \tag|'helplang'|tag\
+      Comma-separated language list.
+      \i|en|i\ automatically added at the end.
+    \o|helpheight|o\: \tag|'helpheight'|tag\
+      Minimal height of Help-Window.
+  \c|:helpclose|c\: \tag|:helpclose|tag\
+    Close a Help-Window.
+  \c|:helpgrep \a|Pattern[|a\@\a|Language]|a\|c\: \tag|:helpgrep|tag\
+    Quickfix-List.
+    \o|ignorecase|o\ not used in \a|Pattern|a\.
+    \c|:lhelpgrep \a|Pattern[|a\@\a|Language]|a\|c\: \tag|:lhelpgrep|tag\
+      Location-List.
+  \c|:exusage|c\, \c|:viusage|c\: \tag|:exusage|tag\ \tag|:viusage|tag\
+    Ex/Normal commands help.
+  \c|:helpfind|c\: \tag|:helpfind|tag\
+    Open a dialog.
+  \c|:helptags \a|[|a\++t\a|] Directory|a\|c\: \tag|:helptags|tag\
+    Generate Tag-File for \a|Directory|a\.
+    \a|Directory|a\ can be \i|ALL|i\ for all doc directories in \o|runtimepath|o\.
+    \i|++t|i\ adds \i|help-tags|i\ tag.

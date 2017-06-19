@@ -50,7 +50,7 @@ achieve special effects.  These options come in three forms:
 :se[t] {option}&vi	Reset option to its Vi default value. {not in Vi}
 :se[t] {option}&vim	Reset option to its Vim default value. {not in Vi}
 
-:se[t] all&		Set all options to their default value.  The values of 
+:se[t] all&		Set all options to their default value.  The values of
 			these options are not changed:
 			  all terminal options, starting with t_
 			  'columns'
@@ -1286,7 +1286,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 			    characters.  It permits dynamic French paragraph
 			    indentation (negative) or emphasizing the line
 			    continuation (positive).
-		sbr	    Display the 'showbreak' value before applying the 
+		sbr	    Display the 'showbreak' value before applying the
 			    additional indent.
 	The default value for min is 20 and shift is 0.
 
@@ -3950,52 +3950,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 		:let &guitabtooltip = "line one\nline two"
 <
 
-						*'helpfile'* *'hf'*
-'helpfile' 'hf'		string	(default (MSDOS)  "$VIMRUNTIME\doc\help.txt"
-					 (others) "$VIMRUNTIME/doc/help.txt")
-			global
-			{not in Vi}
-	Name of the main help file.  All distributed help files should be
-	placed together in one directory.  Additionally, all "doc" directories
-	in 'runtimepath' will be used.
-	Environment variables are expanded |:set_env|.  For example:
-	"$VIMRUNTIME/doc/help.txt".  If $VIMRUNTIME is not set, $VIM is also
-	tried.  Also see |$VIMRUNTIME| and |option-backslash| about including
-	spaces and backslashes.
-	This option cannot be set from a |modeline| or in the |sandbox|, for
-	security reasons.
-
-						*'helpheight'* *'hh'*
-'helpheight' 'hh'	number	(default 20)
-			global
-			{not in Vi}
-			{not available when compiled without the |+windows|
-			feature}
-	Minimal initial height of the help window when it is opened with the
-	":help" command.  The initial height of the help window is half of the
-	current window, or (when the 'ea' option is on) the same as other
-	windows.  When the height is less than 'helpheight', the height is
-	set to 'helpheight'.  Set to zero to disable.
-
-						*'helplang'* *'hlg'*
-'helplang' 'hlg'	string	(default: messages language or empty)
-			global
-			{only available when compiled with the |+multi_lang|
-			feature}
-			{not in Vi}
-	Comma separated list of languages.  Vim will use the first language
-	for which the desired help can be found.  The English help will always
-	be used as a last resort.  You can add "en" to prefer English over
-	another language, but that will only find tags that exist in that
-	language and not in the English help.
-	Example: >
-		:set helplang=de,it
-<	This will first search German, then Italian and finally English help
-	files.
-	When using |CTRL-]| and ":help!" in a non-English help file Vim will
-	try to find the tag in the current language before using this option.
-	See |help-translated|.
-
 				     *'hidden'* *'hid'* *'nohidden'* *'nohid'*
 'hidden' 'hid'		boolean	(default off)
 			global
@@ -4884,7 +4838,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	The cursor is displayed at the start of the space a Tab character
 	occupies, not at the end as usual in Normal mode.  To get this cursor
 	position while displaying Tabs with spaces, use: >
-		:set list lcs=tab:\ \ 
+		:set list lcs=tab:\ \
 <
 	Note that list mode will also affect formatting (set with 'textwidth'
 	or 'wrapmargin') when 'cpoptions' includes 'L'.  See 'listchars' for
@@ -5032,8 +4986,8 @@ A jump table for the options with a short description can be found at |Q_op|.
 			global or local to buffer |global-local|
 			{not in Vi}
 	Program to use for the ":make" command.  See |:make_makeprg|.
-	This option may contain '%' and '#' characters (see  |:_%| and |:_#|), 
-	which are expanded to the current and alternate file name.  Use |::S| 
+	This option may contain '%' and '#' characters (see  |:_%| and |:_#|),
+	which are expanded to the current and alternate file name.  Use |::S|
 	to escape file names in case they contain special characters.
 	Environment variables are expanded |:set_env|.  See |option-backslash|
 	about including spaces and backslashes.
@@ -6752,7 +6706,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 			feature}
 	String to put at the start of lines that have been wrapped.  Useful
 	values are "> " or "+++ ": >
-		:set showbreak=>\ 
+		:set showbreak=>\
 <	Note the backslash to escape the trailing space.  It's easier like
 	this: >
 		:let &showbreak = '+++ '
@@ -7784,7 +7738,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 	non-keyword characters (white space is preferred).  Maximum line
 	length is 510 bytes.
 	To obtain a file to be used here, check out this ftp site:
-	[Sorry this link doesn't work anymore, do you know the right one?] 
+	[Sorry this link doesn't work anymore, do you know the right one?]
 	ftp://ftp.ox.ac.uk/pub/wordlists/  First get the README file.
 	To include a comma in a file name precede it with a backslash.  Spaces
 	after a comma are ignored, otherwise spaces are included in the file
