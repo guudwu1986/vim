@@ -54,42 +54,6 @@ to copy text) with the |CTRL-^| command.  First type the number of the file
 and then hit CTRL-^.  {Vi: only one alternate file name is remembered}
 
 
-CTRL-G		or				*CTRL-G* *:f* *:fi* *:file*
-:f[ile]			Prints the current file name (as typed, unless ":cd"
-			was used), the cursor position (unless the 'ruler'
-			option is set), and the file status (readonly,
-			modified, read errors, new file).  See the 'shortmess'
-			option about how to make this message shorter.
-			{Vi does not include column number}
-
-:f[ile]!		like |:file|, but don't truncate the name even when
-			'shortmess' indicates this.
-
-{count}CTRL-G		Like CTRL-G, but prints the current file name with
-			full path.  If the count is higher than 1 the current
-			buffer number is also given.  {not in Vi}
-
-					*g_CTRL-G* *word-count* *byte-count*
-g CTRL-G		Prints the current position of the cursor in five
-			ways: Column, Line, Word, Character and Byte.  If the
-			number of Characters and Bytes is the same then the
-			Character position is omitted.
-			If there are characters in the line that take more
-			than one position on the screen (<Tab> or special
-			character), both the "real" column and the screen
-			column are shown, separated with a dash.
-			Also see the 'ruler' option and the |wordcount()|
-			function.
-			{not in Vi}
-
-							*v_g_CTRL-G*
-{Visual}g CTRL-G	Similar to "g CTRL-G", but Word, Character, Line, and
-			Byte counts for the visually selected region are
-			displayed.
-			In Blockwise mode, Column count is also shown.  (For
-			{Visual} see |Visual-mode|.)
-			{not in VI}
-
 							*:file_f*
 :f[ile][!] {name}	Sets the current file name to {name}.  The optional !
 			avoids truncating the message, as with |:file|.
@@ -1455,7 +1419,7 @@ Do this before writing the file.  When reading an encrypted file it will be
 set automatically to the method used when that file was written.  You can
 change 'cryptmethod' before writing that file to change the method.
 
-To set the default method, used for new files, use this in your |vimrc| 
+To set the default method, used for new files, use this in your |vimrc|
 file: >
 	set cm=blowfish2
 Using "blowfish2" is highly recommended.  Only use another method if you

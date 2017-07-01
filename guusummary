@@ -1,3 +1,59 @@
+Info:
+  Message:
+    \o|shortmess|o\: \tag|'shortmess'|tag\
+      Flags for behaviors of abbreviating and truncating messages.
+    \c|:file\a|[|a\!\a|]|a\|c\, \c|\s|<C-G>|s\|c\: \tag|:file|tag\ \tag|C-g|tag\
+      Print current filename, cursor position, file status.
+      \i|!|i\ ignores \o|shortmess|o\.
+      \a|Count|a\ gives filename with full path, and also Buffer-Name if larger than 1.
+    \c|g\s|<C-G>|s\|c\: \tag|gC-g|tag\
+      Column,line,word,character,byte information of cursor position, or for Visual selected text.
+  Status-Line:
+    \o|statusline|o\: \tag|'statusline'|tag\
+      Format.
+    \o|ruler|o\: \tag|'ruler'|tag\
+      Cursor position.
+      \o|rulerformat|o\: \tag|'rulerformat'|tag\
+        Ignored by non-empty \o|statusline|o\.
+
+Motion:
+  Operator:
+    Cursor left at start of text.
+    Exclusive: Last character towards end is not included.
+    When Ex-Command used for motion, it is always character-wise exclusive.
+    Use \c|v|c\,\c|V|c\,\c|\s|<C-V>|s\|c\ to force character-wise exclusive, line-wise, block-wise.
+      \c|v|c\ toggles inclusive/exclusive if already character-wise.
+  Within line:
+    \c|h|c\, \c|l|c\: \tag|h|tag\ \tag|l|tag\
+      Left/Right.
+    \c|0|c\: \tag|0|tag\
+      First character.
+      \c|\s|<Home>|s\|c\:
+        Stay in Text-Column instead of Screen-Column if followed by moving up or down.
+      \c|^|c\: \tag|^|tag\
+        First non-blank character.
+    \c|$|c\: \tag|$|tag\
+      End of line.
+      Move \a|Count|a\-1 lines downwards.
+      \c|g_|c\: \tag|g_|tag\
+        Last non-blank character.
+    \c|g0|c\, \c|gm|c\, \c|g$|c\: \tag|g0|tag\ \tag|gm|tag\ \tag|g$|tag\
+        First/Middle/Last character of Screen-Line.
+        \c|g^|c\: \tag|g^|tag\
+          First non-blank character.
+    \c|||c\: \tag|||tag\
+      \a|Count|a\-th Screen-Column.
+    \c|f\a|Character|a\|c\, \c|F\a|Character|a\|c\: \tag|f|tag\ \tag|F|tag\
+      \a|Character|a\ to right/left.
+      \c|t\a|Character|a\|c\, \c|T\a|Character|a\|c\: \tag|t|tag\ \tag|T|tag\
+        One step shorter.
+      \c|;|c\, \c|,|c\: \tag|;|tag\ \tag|,|tag\
+        Repeat in same/opposite direction.
+
+Line-Break:
+  \o|whichwrap|o\: \tag|'whichwrap'|tag\
+    Flags indicating which commands may wrap a line.
+
 Help:
   \c|:help\a|[|a\!\a|] [Subject][|a\@\a|Language]|a\|c\: \tag|:help|tag\
     Display \a|Subject|a\(Default \o|helpfile|o\) in Help-Window.
@@ -26,3 +82,7 @@ Help:
     Generate Tag-File for \a|Directory|a\.
     \a|Directory|a\ can be \i|ALL|i\ for all doc directories in \o|runtimepath|o\.
     \i|++t|i\ adds \i|help-tags|i\ tag.
+
+Misc:
+  \o|virtualedit|o\: \tag|'virtualedit'|tag\
+    Flags for when cursor can be on position of no character.
