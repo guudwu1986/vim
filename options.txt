@@ -6172,17 +6172,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
 
-						*'scroll'* *'scr'*
-'scroll' 'scr'		number	(default: half the window height)
-			local to window
-	Number of lines to scroll with CTRL-U and CTRL-D commands.  Will be
-	set to half the number of lines in the window when the window size
-	changes.  If you give a count to the CTRL-U or CTRL-D command it will
-	be used as the new value for 'scroll'.  Reset to half the window
-	height with ":set scroll=0".   {Vi is a bit different: 'scroll' gives
-	the number of screen lines instead of file lines, makes a difference
-	when lines wrap}
-
 			*'scrollbind'* *'scb'* *'noscrollbind'* *'noscb'*
 'scrollbind' 'scb'	boolean  (default off)
 			local to window
@@ -6210,18 +6199,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	percentage of the window height.  Thus -50 scrolls half the window
 	height.
 	NOTE: This option is set to 1 when 'compatible' is set.
-
-						*'scrolloff'* *'so'*
-'scrolloff' 'so'	number	(default 0, set to 5 in |defaults.vim|)
-			global
-			{not in Vi}
-	Minimal number of screen lines to keep above and below the cursor.
-	This will make some context visible around where you are working.  If
-	you set it to a very large value (999) the cursor line will always be
-	in the middle of the window (except at the start or end of the file or
-	when long lines wrap).
-	For scrolling horizontally see 'sidescrolloff'.
-	NOTE: This option is set to 0 when 'compatible' is set.
 
 						*'scrollopt'* *'sbo'*
 'scrollopt' 'sbo'	string	(default "ver,jump")
@@ -6710,27 +6687,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	a fast terminal use a small number or 1.  Not used for "zh" and "zl"
 	commands.
 
-						*'sidescrolloff'* *'siso'*
-'sidescrolloff' 'siso'	number (default 0)
-			global
-			{not in Vi}
-	The minimal number of screen columns to keep to the left and to the
-	right of the cursor if 'nowrap' is set.  Setting this option to a
-	value greater than 0 while having |'sidescroll'| also at a non-zero
-	value makes some context visible in the line you are scrolling in
-	horizontally (except at beginning of the line).  Setting this option
-	to a large value (like 999) has the effect of keeping the cursor
-	horizontally centered in the window, as long as one does not come too
-	close to the beginning of the line.
-	NOTE: This option is set to 0 when 'compatible' is set.
-
-	Example: Try this together with 'sidescroll' and 'listchars' as
-		 in the following example to never allow the cursor to move
-		 onto the "extends" character: >
-
-		 :set nowrap sidescroll=1 listchars=extends:>,precedes:<
-		 :set sidescrolloff=1
-<
 						*'signcolumn'* *'scl'*
 'signcolumn' 'scl'	string	(default "auto")
 			local to window

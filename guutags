@@ -5,7 +5,11 @@ $	guusummary	/\\tag|$|tag\\/
 'helplang'	guusummary	/\\tag|'helplang'|tag\\/
 'ruler'	guusummary	/\\tag|'ruler'|tag\\/
 'rulerformat'	guusummary	/\\tag|'rulerformat'|tag\\/
+'scroll'	guusummary	/\\tag|'scroll'|tag\\/
+'scrolloff'	guusummary	/\\tag|'scrolloff'|tag\\/
 'shortmess'	guusummary	/\\tag|'shortmess'|tag\\/
+'sidescroll'	guusummary	/\\tag|'sidescroll'|tag\\/
+'startofline'	guusummary	/\\tag|'startofline'|tag\\/
 'statusline'	guusummary	/\\tag|'statusline'|tag\\/
 'virtualedit'	guusummary	/\\tag|'virtualedit'|tag\\/
 'whichwrap'	guusummary	/\\tag|'whichwrap'|tag\\/
@@ -21,7 +25,13 @@ $	guusummary	/\\tag|$|tag\\/
 :lhelpgrep	guusummary	/\\tag|:lhelpgrep|tag\\/
 :viusage	guusummary	/\\tag|:viusage|tag\\/
 ;	guusummary	/\\tag|;|tag\\/
+C-b	guusummary	/\\tag|C-b|tag\\/
+C-d	guusummary	/\\tag|C-d|tag\\/
+C-e	guusummary	/\\tag|C-e|tag\\/
+C-f	guusummary	/\\tag|C-f|tag\\/
 C-g	guusummary	/\\tag|C-g|tag\\/
+C-u	guusummary	/\\tag|C-u|tag\\/
+C-y	guusummary	/\\tag|C-y|tag\\/
 F	guusummary	/\\tag|F|tag\\/
 T	guusummary	/\\tag|T|tag\\/
 ^	guusummary	/\\tag|^|tag\\/
@@ -35,4 +45,5 @@ gm	guusummary	/\\tag|gm|tag\\/
 h	guusummary	/\\tag|h|tag\\/
 l	guusummary	/\\tag|l|tag\\/
 t	guusummary	/\\tag|t|tag\\/
+z+	guusummary	/\\tag|z+|tag\\/
 |	guusummary	/\\tag|||tag\\/

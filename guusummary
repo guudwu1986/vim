@@ -16,6 +16,29 @@ Info:
       \o|rulerformat|o\: \tag|'rulerformat'|tag\
         Ignored by non-empty \o|statusline|o\.
 
+Display:
+  Scroll:
+    Command:
+      \c|\s|<C-E>|s\|c\, \c|\s|<C-Y>|s\|c\: \tag|C-e|tag\ \tag|C-y|tag\
+        One line downwards/upwards.
+      \c|\s|<C-F>|s\|c\, \c|\s|<C-B>|s\|c\: \tag|C-f|tag\ \tag|C-b|tag\
+        One page downwards/upwards.
+      \c|\s|<C-D>|s\|c\, \c|\s|<C-U>|s\|c\: \tag|C-d|tag\ \tag|C-u|tag\
+        Set \o|scroll|o\ to \a|Count|a\, then \o|scroll|o\ lines downwards/upwards.
+        \o|scroll|o\: \tag|'scroll'|tag\
+          Default half height of window.
+          Reset to default when resize window or setting to 0.
+      \c|z+|c\: \tag|z+|tag\
+        Redraw with line below window at top.
+        Same as \c|z\s|<CR>|s\|c\ with \a|Count|a\.
+    Behavior:
+      \o|scrolloff|o\: \tag|'scrolloff'|tag\
+        Minimal number of lines shown above and below cursor.
+        \o|sidescrolloff|o\:
+          Horizontal.
+      \o|sidescroll|o\: \tag|'sidescroll'|tag\
+        Minimal number of columns to horizontal scroll.
+
 Motion:
   Operator:
     Cursor left at start of text.
@@ -23,6 +46,8 @@ Motion:
     When Ex-Command used for motion, it is always character-wise exclusive.
     Use \c|v|c\,\c|V|c\,\c|\s|<C-V>|s\|c\ to force character-wise exclusive, line-wise, block-wise.
       \c|v|c\ toggles inclusive/exclusive if already character-wise.
+    \o|startofline|o\: \tag|'startofline'|tag\
+      When jumping to another line, whether to keep cursor at same column or first non-blank character.
   Within line:
     \c|h|c\, \c|l|c\: \tag|h|tag\ \tag|l|tag\
       Left/Right.
