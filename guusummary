@@ -25,12 +25,16 @@ Display:
         One page downwards/upwards.
       \c|\s|<C-D>|s\|c\, \c|\s|<C-U>|s\|c\: \tag|C-d|tag\ \tag|C-u|tag\
         Set \o|scroll|o\ to \a|Count|a\, then \o|scroll|o\ lines downwards/upwards.
+        Cursor is also moved.
         \o|scroll|o\: \tag|'scroll'|tag\
           Default half height of window.
           Reset to default when resize window or setting to 0.
       \c|z+|c\: \tag|z+|tag\
         Redraw with line below window at top.
         Same as \c|z\s|<CR>|s\|c\ with \a|Count|a\.
+      \c|z^|c\: \tag|z^|tag\
+        Redraw with line above window at bottom.
+        With \a|Count|a\, first put \a|Count|a\-th line bottom, then do above manipulation.
     Behavior:
       \o|scrolloff|o\: \tag|'scrolloff'|tag\
         Minimal number of lines shown above and below cursor.
