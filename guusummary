@@ -29,12 +29,18 @@ Display:
         \o|scroll|o\: \tag|'scroll'|tag\
           Default half height of window.
           Reset to default when resize window or setting to 0.
+      \c|zt|c\, \c|zz|c\, \c|zb|c\: \tag|zt|tag\ \tag|zz|tag\ \tag|zb|tag\
+        Put \a|Count|a\-th(Default cursor) line at top/center/bottom of window.
+        \c|z\s|<CR>|s\|c\, \c|z.|c\, \c|z-|c\: \tag|zCR|tag\ \tag|z.|tag\ \tag|z-|tag\
+          Put cursor at first non-blank character.
       \c|z+|c\: \tag|z+|tag\
         Redraw with line below window at top.
         Same as \c|z\s|<CR>|s\|c\ with \a|Count|a\.
       \c|z^|c\: \tag|z^|tag\
         Redraw with line above window at bottom.
         With \a|Count|a\, first put \a|Count|a\-th line bottom, then do above manipulation.
+      \c|z\a|Height|a\\s|<CR>|s\|c\:
+        Resize the window to \a|Height|a\.
     Behavior:
       \o|scrolloff|o\: \tag|'scrolloff'|tag\
         Minimal number of lines shown above and below cursor.
