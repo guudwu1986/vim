@@ -41,6 +41,12 @@ Display:
         With \a|Count|a\, first put \a|Count|a\-th line bottom, then do above manipulation.
       \c|z\a|Height|a\\s|<CR>|s\|c\:
         Resize the window to \a|Height|a\.
+      \c|zh|c\, \c|zl|c\: \tag|zh|tag\ \tag|zl|tag\
+        Scroll one character towards left/right.
+        \c|zH|c\, \c|zL|c\: \tag|zH|tag\ \tag|zL|tag\
+          Half a screen.
+      \c|zs|c\, \c|ze|c\: \tag|zs|tag\ \tag|ze|tag\
+        Put cursor at left/right side of screen.
     Behavior:
       \o|scrolloff|o\: \tag|'scrolloff'|tag\
         Minimal number of lines shown above and below cursor.

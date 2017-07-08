@@ -49,8 +49,14 @@ z+	guusummary	/\\tag|z+|tag\\/
 z-	guusummary	/\\tag|z-|tag\\/
 z.	guusummary	/\\tag|z.|tag\\/
 zCR	guusummary	/\\tag|zCR|tag\\/
+zH	guusummary	/\\tag|zH|tag\\/
+zL	guusummary	/\\tag|zL|tag\\/
 z^	guusummary	/\\tag|z^|tag\\/
 zb	guusummary	/\\tag|zb|tag\\/
+ze	guusummary	/\\tag|ze|tag\\/
+zh	guusummary	/\\tag|zh|tag\\/
+zl	guusummary	/\\tag|zl|tag\\/
+zs	guusummary	/\\tag|zs|tag\\/
 zt	guusummary	/\\tag|zt|tag\\/
 zz	guusummary	/\\tag|zz|tag\\/
 |	guusummary	/\\tag|||tag\\/
