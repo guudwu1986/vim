@@ -54,6 +54,12 @@ Display:
           Horizontal.
       \o|sidescroll|o\: \tag|'sidescroll'|tag\
         Minimal number of columns to horizontal scroll.
+      \o|scrollbind|o\: \tag|'scrollbind'|tag\
+        Scroll synchronically.
+        \o|scrollopt|o\: \tag|'scrollopt'|tag\
+          Comma-separated list.
+        \c|:syncbind|c\: \tag|:syncbind|tag\
+          Sync all \o|scrollbind|o\ windows to have same relative offset.
 
 Motion:
   Operator:

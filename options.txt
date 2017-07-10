@@ -6172,22 +6172,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
 
-			*'scrollbind'* *'scb'* *'noscrollbind'* *'noscb'*
-'scrollbind' 'scb'	boolean  (default off)
-			local to window
-			{not in Vi}
-			{not available when compiled without the |+scrollbind|
-			feature}
-	See also |scroll-binding|.  When this option is set, the current
-	window scrolls as other scrollbind windows (windows that also have
-	this option set) scroll.  This option is useful for viewing the
-	differences between two versions of a file, see 'diff'.
-	See |'scrollopt'| for options that determine how this option should be
-	interpreted.
-	This option is mostly reset when splitting a window to edit another
-	file.  This means that ":split | edit file" results in two windows
-	with scroll-binding, but ":split file" does not.
-
 						*'scrolljump'* *'sj'*
 'scrolljump' 'sj'	number	(default 1)
 			global
@@ -6199,40 +6183,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	percentage of the window height.  Thus -50 scrolls half the window
 	height.
 	NOTE: This option is set to 1 when 'compatible' is set.
-
-						*'scrollopt'* *'sbo'*
-'scrollopt' 'sbo'	string	(default "ver,jump")
-			global
-			{not available when compiled without the |+scrollbind|
-			feature}
-			{not in Vi}
-	This is a comma-separated list of words that specifies how
-	'scrollbind' windows should behave.  'sbo' stands for ScrollBind
-	Options.
-	The following words are available:
-	    ver		Bind vertical scrolling for 'scrollbind' windows
-	    hor		Bind horizontal scrolling for 'scrollbind' windows
-	    jump	Applies to the offset between two windows for vertical
-			scrolling.  This offset is the difference in the first
-			displayed line of the bound windows.  When moving
-			around in a window, another 'scrollbind' window may
-			reach a position before the start or after the end of
-			the buffer.  The offset is not changed though, when
-			moving back the 'scrollbind' window will try to scroll
-			to the desired position when possible.
-			When now making that window the current one, two
-			things can be done with the relative offset:
-			1. When "jump" is not included, the relative offset is
-			   adjusted for the scroll position in the new current
-			   window.  When going back to the other window, the
-			   new relative offset will be used.
-			2. When "jump" is included, the other windows are
-			   scrolled to keep the same relative offset.  When
-			   going back to the other window, it still uses the
-			   same relative offset.
-	Also see |scroll-binding|.
-	When 'diff' mode is active there always is vertical scroll binding,
-	even when "ver" isn't there.
 
 						*'sections'* *'sect'*
 'sections' 'sect'	string	(default "SHNHH HUnhsh")

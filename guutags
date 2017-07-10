@@ -6,7 +6,9 @@ $	guusummary	/\\tag|$|tag\\/
 'ruler'	guusummary	/\\tag|'ruler'|tag\\/
 'rulerformat'	guusummary	/\\tag|'rulerformat'|tag\\/
 'scroll'	guusummary	/\\tag|'scroll'|tag\\/
+'scrollbind'	guusummary	/\\tag|'scrollbind'|tag\\/
 'scrolloff'	guusummary	/\\tag|'scrolloff'|tag\\/
+'scrollopt'	guusummary	/\\tag|'scrollopt'|tag\\/
 'shortmess'	guusummary	/\\tag|'shortmess'|tag\\/
 'sidescroll'	guusummary	/\\tag|'sidescroll'|tag\\/
 'startofline'	guusummary	/\\tag|'startofline'|tag\\/
@@ -23,6 +25,7 @@ $	guusummary	/\\tag|$|tag\\/
 :helpgrep	guusummary	/\\tag|:helpgrep|tag\\/
 :helptags	guusummary	/\\tag|:helptags|tag\\/
 :lhelpgrep	guusummary	/\\tag|:lhelpgrep|tag\\/
+:syncbind	guusummary	/\\tag|:syncbind|tag\\/
 :viusage	guusummary	/\\tag|:viusage|tag\\/
 ;	guusummary	/\\tag|;|tag\\/
 C-b	guusummary	/\\tag|C-b|tag\\/
