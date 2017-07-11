@@ -79,6 +79,8 @@ Motion:
         Stay in Text-Column instead of Screen-Column if followed by moving up or down.
       \c|^|c\: \tag|^|tag\
         First non-blank character.
+        \c|_|c\: \tag|_|tag\
+          Move \a|Count|a\-1 lines upwards.
     \c|$|c\: \tag|$|tag\
       End of line.
       Move \a|Count|a\-1 lines downwards.
@@ -96,6 +98,28 @@ Motion:
         One step shorter.
       \c|;|c\, \c|,|c\: \tag|;|tag\ \tag|,|tag\
         Repeat in same/opposite direction.
+  Up/Down:
+    Moving beyond start or end of file gives no error, unless \i|-|i\ included in \o|cpooptions|o\.
+    \c|k|c\, \c|j|c\: \tag|k|tag\ \tag|j|tag\
+      Line.
+      \c|gk|c\, \c|gj|c\: \tag|gk|tag\ \tag|gj|tag\
+        Display line.
+      \c|-|c\, \c|+|c\,\c|\s|<CR>|s\|c\: \tag|-|tag\ \tag|+|tag\
+        First non-blank character.
+    \c|G|c\: \tag|G|tag\
+      \a|Count|a\-th(Default last) line.
+      \c|\s|<C-End>|s\|c\:
+        Last character.
+      \c|gg|c\, \c|\s|<C-Home>|s\|c\: \tag|gg|tag\
+        Default first line.
+        First non-blank character unless \o|startofline|o\ reset.
+      \c|:\a|Address|a\|c\:
+        \a|Address|a\ line.
+        Jump-List not modified.
+    \c|\a|Count|a\%|c\:
+      \a|Count|a\ percentage.
+    \c|go|c\, \c|:goto \a|[Count]|a\|c\: \tag|go|tag\ \tag|:goto|tag\
+      \a|Count|a\-th byte.
 
 Line-Break:
   \o|whichwrap|o\: \tag|'whichwrap'|tag\
