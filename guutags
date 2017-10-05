@@ -1,8 +1,14 @@
 !_TAG_FILE_SORTED	1	Case
 $	guusummary	/\\tag|$|tag\\/
+'display'	guusummary	/\\tag|'display'|tag\\/
 'helpfile'	guusummary	/\\tag|'helpfile'|tag\\/
 'helpheight'	guusummary	/\\tag|'helpheight'|tag\\/
 'helplang'	guusummary	/\\tag|'helplang'|tag\\/
+'isfname'	guusummary	/\\tag|'isfname'|tag\\/
+'isident'	guusummary	/\\tag|'isident'|tag\\/
+'iskeyword'	guusummary	/\\tag|'iskeyword'|tag\\/
+'isprint'	guusummary	/\\tag|'isprint'|tag\\/
+'quoteescape'	guusummary	/\\tag|'quoteescape'|tag\\/
 'ruler'	guusummary	/\\tag|'ruler'|tag\\/
 'rulerformat'	guusummary	/\\tag|'rulerformat'|tag\\/
 'scroll'	guusummary	/\\tag|'scroll'|tag\\/

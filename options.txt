@@ -2657,25 +2657,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 	security reasons.
 	{Vi: directory to put temp file in, defaults to "/tmp"}
 
-					*'display'* *'dy'*
-'display' 'dy'		string	(default "", set to "truncate" in
-							       |defaults.vim|)
-			global
-			{not in Vi}
-	Change the way text is displayed.  This is comma separated list of
-	flags:
-	lastline	When included, as much as possible of the last line
-			in a window will be displayed.  "@@@" is put in the
-			last columns of the last screen line to indicate the
-			rest of the line is not displayed.
-	truncate	Like "lastline", but "@@@" is displayed in the first
-			column of the last screen line.  Overrules "lastline".
-	uhex		Show unprintable characters hexadecimal as <xx>
-			instead of using ^C and ~C.
-
-	When neither "lastline" nor "truncate" is included, a last line that
-	doesn't fit is replaced with "@" lines.
-
 						*'eadirection'* *'ead'*
 'eadirection' 'ead'	string	(default "both")
 			global
@@ -4441,128 +4422,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 
 	NOTE: This option is reset when 'compatible' is set.
 
-						*'isfname'* *'isf'*
-'isfname' 'isf'		string	(default for MS-DOS, Win32 and OS/2:
-			     "@,48-57,/,\,.,-,_,+,,,#,$,%,{,},[,],:,@-@,!,~,="
-			    for AMIGA: "@,48-57,/,.,-,_,+,,,$,:"
-			    for VMS: "@,48-57,/,.,-,_,+,,,#,$,%,<,>,[,],:,;,~"
-			    for OS/390: "@,240-249,/,.,-,_,+,,,#,$,%,~,="
-			    otherwise: "@,48-57,/,.,-,_,+,,,#,$,%,~,=")
-			global
-			{not in Vi}
-	The characters specified by this option are included in file names and
-	path names.  Filenames are used for commands like "gf", "[i" and in
-	the tags file.  It is also used for "\f" in a |pattern|.
-	Multi-byte characters 256 and above are always included, only the
-	characters up to 255 are specified with this option.
-	For UTF-8 the characters 0xa0 to 0xff are included as well.
-	Think twice before adding white space to this option.  Although a
-	space may appear inside a file name, the effect will be that Vim
-	doesn't know where a file name starts or ends when doing completion.
-	It most likely works better without a space in 'isfname'.
-
-	Note that on systems using a backslash as path separator, Vim tries to
-	do its best to make it work as you would expect.  That is a bit
-	tricky, since Vi originally used the backslash to escape special
-	characters.  Vim will not remove a backslash in front of a normal file
-	name character on these systems, but it will on Unix and alikes.  The
-	'&' and '^' are not included by default, because these are special for
-	cmd.exe.
-
-	The format of this option is a list of parts, separated with commas.
-	Each part can be a single character number or a range.  A range is two
-	character numbers with '-' in between.  A character number can be a
-	decimal number between 0 and 255 or the ASCII character itself (does
-	not work for digits).  Example:
-		"_,-,128-140,#-43"	(include '_' and '-' and the range
-					128 to 140 and '#' to 43)
-	If a part starts with '^', the following character number or range
-	will be excluded from the option.  The option is interpreted from left
-	to right.  Put the excluded character after the range where it is
-	included.  To include '^' itself use it as the last character of the
-	option or the end of a range.  Example:
-		"^a-z,#,^"	(exclude 'a' to 'z', include '#' and '^')
-	If the character is '@', all characters where isalpha() returns TRUE
-	are included.  Normally these are the characters a to z and A to Z,
-	plus accented characters.  To include '@' itself use "@-@".  Examples:
-		"@,^a-z"	All alphabetic characters, excluding lower
-				case ASCII letters.
-		"a-z,A-Z,@-@"	All letters plus the '@' character.
-	A comma can be included by using it where a character number is
-	expected.  Example:
-		"48-57,,,_"	Digits, comma and underscore.
-	A comma can be excluded by prepending a '^'.  Example:
-		" -~,^,,9"	All characters from space to '~', excluding
-				comma, plus <Tab>.
-	See |option-backslash| about including spaces and backslashes.
-
-						*'isident'* *'isi'*
-'isident' 'isi'		string	(default for MS-DOS, Win32 and OS/2:
-					   "@,48-57,_,128-167,224-235"
-				otherwise: "@,48-57,_,192-255")
-			global
-			{not in Vi}
-	The characters given by this option are included in identifiers.
-	Identifiers are used in recognizing environment variables and after a
-	match of the 'define' option.  It is also used for "\i" in a
-	|pattern|.  See 'isfname' for a description of the format of this
-	option.
-	Careful: If you change this option, it might break expanding
-	environment variables.  E.g., when '/' is included and Vim tries to
-	expand "$HOME/.viminfo".  Maybe you should change 'iskeyword' instead.
-
-						*'iskeyword'* *'isk'*
-'iskeyword' 'isk'	string (Vim default for MS-DOS and Win32:
-					    "@,48-57,_,128-167,224-235"
-				   otherwise:  "@,48-57,_,192-255"
-				Vi default: "@,48-57,_")
-			local to buffer
-			{not in Vi}
-	Keywords are used in searching and recognizing with many commands:
-	"w", "*", "[i", etc.  It is also used for "\k" in a |pattern|.  See
-	'isfname' for a description of the format of this option.  For C
-	programs you could use "a-z,A-Z,48-57,_,.,-,>".
-	For a help file it is set to all non-blank printable characters except
-	'*', '"' and '|' (so that CTRL-] on a command finds the help for that
-	command).
-	When the 'lisp' option is on the '-' character is always included.
-	This option also influences syntax highlighting, unless the syntax
-	uses |:syn-iskeyword|.
-	NOTE: This option is set to the Vi default value when 'compatible' is
-	set and to the Vim default value when 'compatible' is reset.
-
-						*'isprint'* *'isp'*
-'isprint' 'isp'	string	(default for MS-DOS, Win32, OS/2 and Macintosh:
-				"@,~-255"; otherwise: "@,161-255")
-			global
-			{not in Vi}
-	The characters given by this option are displayed directly on the
-	screen.  It is also used for "\p" in a |pattern|.  The characters from
-	space (ASCII 32) to '~' (ASCII 126) are always displayed directly,
-	even when they are not included in 'isprint' or excluded.  See
-	'isfname' for a description of the format of this option.
-
-	Non-printable characters are displayed with two characters:
-		  0 -  31	"^@" - "^_"
-		 32 - 126	always single characters
-		   127		"^?"
-		128 - 159	"~@" - "~_"
-		160 - 254	"| " - "|~"
-		   255		"~?"
-	When 'encoding' is a Unicode one, illegal bytes from 128 to 255 are
-	displayed as <xx>, with the hexadecimal value of the byte.
-	When 'display' contains "uhex" all unprintable characters are
-	displayed as <xx>.
-	The SpecialKey highlighting will be used for unprintable characters.
-	|hl-SpecialKey|
-
-	Multi-byte characters 256 and above are always included, only the
-	characters up to 255 are specified with this option.  When a character
-	is printable but it is not available in the current font, a
-	replacement character will be shown.
-	Unprintable and zero-width Unicode characters are displayed as <xxxx>.
-	There is no option to specify these characters.
-
 			*'joinspaces'* *'js'* *'nojoinspaces'* *'nojs'*
 'joinspaces' 'js'	boolean	(default on)
 			global
@@ -5844,16 +5703,6 @@ A jump table for the options with a short description can be found at |Q_op|.
 
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
-
-						*'quoteescape'* *'qe'*
-'quoteescape' 'qe'	string	(default "\")
-			local to buffer
-			{not in Vi}
-	The characters that are used to escape quotes in a string.  Used for
-	objects like a', a" and a` |a'|.
-	When one of the characters in this option is found inside a string,
-	the following character will be skipped.  The default value makes the
-	text "foo\"bar\\" considered to be one string.
 
 				   *'readonly'* *'ro'* *'noreadonly'* *'noro'*
 'readonly' 'ro'		boolean	(default off)

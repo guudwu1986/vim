@@ -60,6 +60,11 @@ Display:
           Comma-separated list.
         \c|:syncbind|c\: \tag|:syncbind|tag\
           Sync all \o|scrollbind|o\ windows to have same relative offset.
+  Misc:
+    \o|display|o\: \tag|'display'|tag\
+      \i|uhex|i\: Show unprintable characters using hexadecimal numbers.
+      \i|lastline|i\: Show as much as possible in last line.
+        \i|truncate|i\: Like \i|lastline|i\ but overrules it.
 
 Motion:
   Operator:
@@ -69,7 +74,7 @@ Motion:
     Use \c|v|c\,\c|V|c\,\c|\s|<C-V>|s\|c\ to force character-wise exclusive, line-wise, block-wise.
       \c|v|c\ toggles inclusive/exclusive if already character-wise.
     \o|startofline|o\: \tag|'startofline'|tag\
-      When jumping to another line, whether to keep cursor at same column or first non-blank character.
+      When jumping to another line, whether to keep cursor at same column or move to first non-blank character.
   Within line:
     \c|h|c\, \c|l|c\: \tag|h|tag\ \tag|l|tag\
       Left/Right.
@@ -80,7 +85,7 @@ Motion:
       \c|^|c\: \tag|^|tag\
         First non-blank character.
         \c|_|c\: \tag|_|tag\
-          Move \a|Count|a\-1 lines upwards.
+          Move \a|Count|a\-1 lines downwards.
     \c|$|c\: \tag|$|tag\
       End of line.
       Move \a|Count|a\-1 lines downwards.
@@ -120,6 +125,30 @@ Motion:
       \a|Count|a\ percentage.
     \c|go|c\, \c|:goto \a|[Count]|a\|c\: \tag|go|tag\ \tag|:goto|tag\
       \a|Count|a\-th byte.
+  Text-Object:
+    \i|a|i\ for one object and \i|i|i\ for inner object.
+    \i|w|i\: word.
+      \i|W|i\: WORD.
+      \i|s|i\: Sentence.
+      \i|p|i\: Paragraph.
+      \i|B|i\,\i|{|i\,\i|}|i\: {}-block.
+      \i|b|i\,\i|(|i\,\i|)|i\: ()-block.
+      \i|[|i\,\i|]|i\: []-block.
+      \i|<|i\,\i|>|i\: <>-block.
+      \i|t|i\: Tag-block leading by \s|<tag>|s\.
+      \i|"|i\,\i|`|i\,\i|'|i\: Quotation. Within one line.
+        \o|quoteescape|o\: \tag|'quoteescape'|tag\
+          Characters for escaping.
+    Character set:
+      \o|iskeyword|o\: \tag|'iskeyword'|tag\
+        Word.
+      \o|isfname|o\: \tag|'isfname'|tag\
+        Filename and pathname.
+      \o|isident|o\: \tag|'isident'|tag\
+        Identifier.
+      \o|isprint|o\: \tag|'isprint'|tag\
+        Which characters between 0-255 are printed directly.
+        32-126 are always included.
 
 Line-Break:
   \o|whichwrap|o\: \tag|'whichwrap'|tag\
